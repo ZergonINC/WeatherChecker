@@ -11,6 +11,8 @@ namespace WeatherChecker.ViewModel
 {
     class CityValidationRule : ValidationRule
     {
+        //Валидатор поля City
+
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
             var city = value as string;

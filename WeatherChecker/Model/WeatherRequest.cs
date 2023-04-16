@@ -15,7 +15,6 @@ namespace WeatherChecker.Model
 {
     public class WeatherRequest
     {
-
         internal async Task<DataWeather> SendRequest(string weatherApi)
         {
             // Получаем Api ответ
@@ -32,8 +31,6 @@ namespace WeatherChecker.Model
                     // Десериализуем Api Json в специальный класс для дальнейшего взаимодействия.
 
                     var data = JsonConvert.DeserializeObject<DataWeather>(responseBody);
-
-                    //DataByWeather data = JsonSerializer.Deserialize<DataByWeather>(await response.Content.ReadAsStringAsync(), serializerOptions);
 
                     return data;
                 }

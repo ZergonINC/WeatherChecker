@@ -1,16 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using WeatherChecker.Model;
 
 namespace WeatherChecker.ViewModel
 {
+    //Простенькая viewmodel, просто объявляем свойства и присваиваем и значения.
+
     public class MainWindowViewModel : BaseViewModel
     {
-        private string _cityField;
+        private string _cityField = "";
         public string CityField
         {
             get { return _cityField; }
@@ -179,7 +183,6 @@ namespace WeatherChecker.ViewModel
         }
 
         DataWeather dataWeather;
-
         Facade facade;
 
         public MainWindowViewModel()
@@ -209,8 +212,7 @@ namespace WeatherChecker.ViewModel
                     WindDegField = Weather.wind.deg;
                     WindGustField = Weather.wind.gust;
                     CloudsField = Weather.clouds.all;
-
-                }, (parameter) => true);
+                });
             }
         }
     }

@@ -2,6 +2,8 @@
 
 namespace WeatherChecker.Model
 {
+    //Класс для десериализации объекта JSON, в дальнейшем если потребуется можно легко интегрировать БД, используя этот класс
+
     public class DataWeather
     {
         public Coord coord { get; set; }
