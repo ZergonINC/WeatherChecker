@@ -6,7 +6,6 @@ namespace WeatherChecker.Model
     {
         public Coord coord { get; set; }
         public List<Weather> weather { get; set; }
-        public string @base { get; set; }
         public Main main { get; set; }
         public int visibility { get; set; }
         public Wind wind { get; set; }

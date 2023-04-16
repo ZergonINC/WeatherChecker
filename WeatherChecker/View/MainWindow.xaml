@@ -7,8 +7,8 @@
         xmlns:viewmodel="clr-namespace:WeatherChecker.ViewModel"
         mc:Ignorable="d"
         Title="Weather Checker" 
-        Height="720" 
-        Width="400">
+        Height="700" 
+        Width="417">
     
     <Window.DataContext>
         <viewmodel:MainWindowViewModel/>
@@ -24,8 +24,8 @@
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="75"/>
-                <RowDefinition Height="125"/>
+                <RowDefinition Height="85"/>
+                <RowDefinition Height="3*"/>
                 <RowDefinition Height="75"/>
             </Grid.RowDefinitions>
 
@@ -42,11 +42,11 @@
                 </Grid.RowDefinitions>
 
                 <Grid Grid.Row="0">
-                    <Label Foreground="#616161" Margin="5 5 5 5" Content="Введите название города на английском:"/>
+                    <Label Foreground="#616161" Margin="20 5" Content="Введите название города на английском:"/>
                 </Grid>
 
                 <Grid Grid.Row="1">
-                    <TextBox Margin="5 7" Style="{StaticResource textBoxInError}">
+                    <TextBox VerticalContentAlignment="Center" Margin="20 5" Style="{StaticResource textBoxInError}">
                         <TextBox.Text>
                             <Binding Path="CityField" UpdateSourceTrigger="PropertyChanged" >
                                 <Binding.ValidationRules>
@@ -61,35 +61,74 @@
 
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Grid Grid.Column="0" Margin="25 5 5 5">
+                <Grid Grid.Column="0" Margin="20 5">
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
                     </Grid.RowDefinitions>
-
-                    <Label Grid.Row="0" Content="Страна" />
-                    <Label Grid.Row="1" Content="Регион"/>
-                    <Label Grid.Row="2" Content="Город"/>
+                    
+                    <Label Grid.Row="0" Content="Город" />
+                    <Label Grid.Row="1" Content="Погода" />
+                    <Label Grid.Row="2" Content=""/>
+                    <Label Grid.Row="3" Content="Температура(С)"/>
+                    <Label Grid.Row="4" Content="Ощущается как(С)" />
+                    <Label Grid.Row="5" Content="Давление(гПа)"/>
+                    <Label Grid.Row="6" Content="Влажность(%)"/>
+                    <Label Grid.Row="7" Content="Видимость(м)" />
+                    <Label Grid.Row="8" Content="Скорость ветра"/>
+                    <Label Grid.Row="9" Content="Порывы ветра(м/c)"/>
+                    <Label Grid.Row="10" Content="Направление ветра(градусы)"/>
+                    <Label Grid.Row="11" Content="Облачность"/>
                 </Grid>
 
-                <Grid Grid.Column="1" Margin="25 5 5 5">
+                <Grid Grid.Column="1" Margin="20 5">
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
                     </Grid.RowDefinitions>
-                   
+
+                    <TextBlock Grid.Row="0" Margin="5" Text="{Binding Path=CityNameField}" />
+                    <TextBlock Grid.Row="1" Margin="5" Text="{Binding Path=WeatherMainField}" />
+                    <TextBlock Grid.Row="2" Margin="5" Text="{Binding Path=WeatherDescripField}" />
+                    <TextBlock Grid.Row="3" Margin="5" Text="{Binding Path=TempMainField}" />
+                    <TextBlock Grid.Row="4" Margin="5" Text="{Binding Path=TempFeelsField}" />
+                    <TextBlock Grid.Row="5" Margin="5" Text="{Binding Path=PressureField}" />
+                    <TextBlock Grid.Row="6" Margin="5" Text="{Binding Path=HumidityField}" />
+                    <TextBlock Grid.Row="7" Margin="5" Text="{Binding Path=VisibilityField}" />
+                    <TextBlock Grid.Row="8" Margin="5" Text="{Binding Path=WindSpeedField}" />
+                    <TextBlock Grid.Row="9" Margin="5" Text="{Binding Path=WindGustField}" />
+                    <TextBlock Grid.Row="10" Margin="5" Text="{Binding Path=WindDegField}" />
+                    <TextBlock Grid.Row="11" Margin="5" Text="{Binding Path=CloudsField}" />
                 </Grid>
 
             </Grid>
 
             <Grid Grid.Row="3">
-                <Button Margin="5" Content="Find" Command="{Binding CheckWeatherCommand}"/>
+                <Button Margin="20 10" Content="Найти" Command="{Binding CheckWeatherCommand}"/>
             </Grid>
         </Grid>
     </Grid>
